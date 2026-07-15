@@ -1,0 +1,435 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>👑</text></svg>" />
+    
+    <!-- SEO Meta Tags -->
+    <title>Aura Heights | Luxury Residences & Private Lounge</title>
+    <meta name="description" content="Experience architectural excellence and exclusive private club amenities at Aura Heights. Explore luxury residences, book a private tour, and preview floor layouts." />
+    <meta name="keywords" content="luxury real estate, penthouse, private lounge, luxury apartments, real estate development, boutique hotel, private club" />
+    <meta name="author" content="Aura Heights" />
+    
+    <!-- Google Fonts (Cinzel for premium headings, Montserrat for modern body) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700;900&family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Custom Stylesheet -->
+    <link rel="stylesheet" href="/src/styles/main.css" />
+  </head>
+  <body class="dark-theme">
+    <!-- Preloader Screen -->
+    <div id="lounge-loader" class="lounge-loader">
+      <div class="loader-content">
+        <div class="loader-logo">A</div>
+        <h1 class="loader-title">AURA HEIGHTS</h1>
+        <p class="loader-subtitle">Entering Elegance...</p>
+        <div class="loader-progress-bar">
+          <div id="loader-progress-fill" class="loader-progress-fill"></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- 3D Particle Background Container -->
+    <div id="lounge-bg-canvas"></div>
+
+    <!-- Navigation Header -->
+    <header class="lounge-header">
+      <div class="nav-container container">
+        <a href="#" class="logo-link">
+          <span class="logo-text">AURA<span>HEIGHTS</span></span>
+        </a>
+        
+        <nav class="nav-menu" id="nav-menu">
+          <ul class="nav-list">
+            <li><a href="#about" class="nav-link">The Concept</a></li>
+            <li><a href="#amenities" class="nav-link">Amenities</a></li>
+            <li><a href="#floors" class="nav-link">Floor Plans</a></li>
+            <li><a href="#gallery" class="nav-link">Before/After</a></li>
+            <li><a href="#booking" class="nav-link">Schedule Tour</a></li>
+            <li><a href="#contact" class="nav-link">Location</a></li>
+          </ul>
+        </nav>
+        
+        <div class="nav-actions">
+          <a href="#booking" class="btn btn-gold nav-cta">Book Tour</a>
+          <button id="menu-toggle" class="menu-toggle-btn" aria-label="Toggle Menu">
+            <span class="menu-bar"></span>
+            <span class="menu-bar"></span>
+            <span class="menu-bar"></span>
+          </button>
+        </div>
+      </div>
+    </header>
+
+    <main>
+      <!-- Hero Section -->
+      <section id="hero" class="hero-section">
+        <div class="hero-grid container">
+          <div class="hero-content">
+            <div class="badge-gold">Exclusive Residences & Lounge</div>
+            <h1 class="hero-title">Elevate Your Standard of <span class="gold-text">Living</span></h1>
+            <p class="hero-desc">An architectural masterpiece nestled in Metropolis, combining private sky-lounge privileges with state-of-the-art residences.</p>
+            <div class="hero-ctas">
+              <a href="#booking" class="btn btn-gold btn-lg">Schedule Private Tour</a>
+              <a href="#floors" class="btn btn-outline btn-lg">Explore Layouts</a>
+            </div>
+          </div>
+          <div class="hero-3d-wrapper">
+            <div id="hero-3d-canvas-container" class="canvas-3d-container">
+              <!-- Three.js interactive building model goes here -->
+              <div class="canvas-hint">Drag to rotate building • Scroll to scale</div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Concept Section -->
+      <section id="about" class="about-section section-padding">
+        <div class="container">
+          <div class="about-grid">
+            <div class="about-image-wrapper">
+              <img id="suite-img" class="about-img" src="/src/assets/lounge_suite.png" alt="Aura Heights Luxury Suite Interior" />
+              <div class="image-accent-card glassmorphic">
+                <span class="accent-number">42</span>
+                <span class="accent-label">Limited Edition Penthouse Units</span>
+              </div>
+            </div>
+            <div class="about-content">
+              <div class="section-subtitle">The Concept</div>
+              <h2 class="section-title">A Vision of Heights and Harmony</h2>
+              <p class="about-para">Designed by award-winning architectural firm Studio Noir, Aura Heights stands as a beacon of high-end glassmorphic facades and natural stone integration.</p>
+              <p class="about-para">Each residence occupies a dedicated half-floor, ensuring absolute privacy, acoustic decoupling, and wrapping panoramic viewports. Homeowners automatically gain VIP membership status to the Obsidian Sky Lounge located on the 45th story.</p>
+              
+              <div class="spec-list">
+                <div class="spec-item">
+                  <span class="spec-icon">✨</span>
+                  <div class="spec-text">
+                    <strong>Obsidian Sky Lounge Access</strong>
+                    <p>Private dining, premium cigar cellar, and heated sky pools.</p>
+                  </div>
+                </div>
+                <div class="spec-item">
+                  <span class="spec-icon">🔑</span>
+                  <div class="spec-text">
+                    <strong>24/7 Smart Concierge</strong>
+                    <p>Biometric security vaults, valet, and private airport charters.</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Amenities Section -->
+      <section id="amenities" class="amenities-section section-padding">
+        <div class="container">
+          <div class="section-header">
+            <div class="section-subtitle">Exclusives</div>
+            <h2 class="section-title">The Masterful Amenity Suite</h2>
+            <p class="section-desc">Experience services tailored to align luxury comfort with urban convenience.</p>
+          </div>
+          
+          <div class="amenities-grid">
+            <!-- Amenity 1 -->
+            <div class="amenity-card glassmorphic">
+              <div class="card-icon-wrapper">🍸</div>
+              <h3 class="amenity-card-title">Sky Pool & Lounge</h3>
+              <p class="amenity-card-desc">Obsidian pool framing sunset panoramic skylines. Private bartender service available daily.</p>
+            </div>
+            <!-- Amenity 2 -->
+            <div class="amenity-card glassmorphic">
+              <div class="card-icon-wrapper">💆</div>
+              <h3 class="amenity-card-title">Therapeutic Cryo-Spa</h3>
+              <p class="amenity-card-desc">State-of-the-art cold plunging pools, dry Finnish saunas, and private therapy masseuses.</p>
+            </div>
+            <!-- Amenity 3 -->
+            <div class="amenity-card glassmorphic">
+              <div class="card-icon-wrapper">🎬</div>
+              <h3 class="amenity-card-title">Acoustic Private Cinema</h3>
+              <p class="amenity-card-desc">12-seat custom velvet reclining theatre, fitted with Dolby Atmos spatial acoustics.</p>
+            </div>
+            <!-- Amenity 4 -->
+            <div class="amenity-card glassmorphic">
+              <div class="card-icon-wrapper">🍷</div>
+              <h3 class="amenity-card-title">Obsidian Wine Cellar</h3>
+              <p class="amenity-card-desc">Climate-controlled somatic vaults storing rare vintages. Managed by our master sommelier.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Interactive Floor Plan Explorer -->
+      <section id="floors" class="floors-section section-padding">
+        <div class="container">
+          <div class="floors-grid">
+            <div class="floors-content">
+              <div class="section-subtitle">Layouts</div>
+              <h2 class="section-title">Interactive Floor Plans</h2>
+              <p class="floors-desc">Select different residence levels to preview room boundaries, balcony directions, and total square footage dimensions.</p>
+              
+              <div class="floor-options">
+                <button class="floor-btn active" data-floor="studio">
+                  <span class="btn-name">Grand Studio Executive</span>
+                  <span class="btn-spec">1,250 sq.ft. • 1 Bed</span>
+                </button>
+                <button class="floor-btn" data-floor="duplex">
+                  <span class="btn-name">Imperial Duplex Suite</span>
+                  <span class="btn-spec">2,800 sq.ft. • 3 Bed</span>
+                </button>
+                <button class="floor-btn" data-floor="penthouse">
+                  <span class="btn-name">Royal Sky Penthouse</span>
+                  <span class="btn-spec">5,200 sq.ft. • 5 Bed</span>
+                </button>
+              </div>
+              
+              <div class="floor-details-card glassmorphic" id="floor-details-card">
+                <h4 id="floor-detail-title">Grand Studio Executive</h4>
+                <p id="floor-detail-text">Perfect for executives. Features open-concept kitchen lounge, dedicated study enclave, master bath, and a 200 sq.ft. private terrace overviewing city parks.</p>
+              </div>
+            </div>
+            <div class="floors-display">
+              <div class="display-box glassmorphic">
+                <!-- Custom SVG Floor plan drawing dynamically managed by JavaScript -->
+                <div class="floor-svg-container" id="floor-svg-container">
+                  <!-- SVG will render here -->
+                </div>
+                <div class="floor-tag-badge" id="floor-tag-badge">Studio Layout</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Before/After Renovation Slider -->
+      <section id="gallery" class="gallery-section section-padding">
+        <div class="container">
+          <div class="section-header">
+            <div class="section-subtitle">Suite Transformation</div>
+            <h2 class="section-title">Construction to Finished Opulence</h2>
+            <p class="section-desc">Drag the divider to compare the raw architectural concrete framework with the final styled interior suite.</p>
+          </div>
+          
+          <div class="before-after-wrapper">
+            <div class="before-after-slider" id="lounge-slider">
+              <!-- After Image (Finished interior) -->
+              <img src="/src/assets/suite_after.png" class="slider-image after-image" alt="Finished Luxury Suite Interior" />
+              
+              <!-- Before Image (Concrete framework) -->
+              <div class="slider-image-overlay" id="lounge-slider-overlay">
+                <img src="/src/assets/suite_before.png" class="slider-image before-image" alt="Raw Construction Concrete Frame" />
+              </div>
+              
+              <!-- Slider Divider Handle -->
+              <div class="slider-handle" id="lounge-slider-handle">
+                <div class="handle-line"></div>
+                <div class="handle-button">◀ ▶</div>
+                <div class="handle-line"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Tour Reservation Form -->
+      <section id="booking" class="booking-section section-padding">
+        <div class="container">
+          <div class="booking-grid glassmorphic">
+            <div class="booking-info-panel">
+              <div>
+                <div class="section-subtitle text-gold">Reservations</div>
+                <h2 class="section-title text-gold">Schedule a Private Showing</h2>
+                <p class="booking-panel-desc text-light">Submit your contact credentials to arrange a private site tour guided by our host sommelier. Parking validation and refreshments provided.</p>
+              </div>
+              
+              <!-- New Guest Portal document downloader -->
+              <div class="welcome-portal-panel">
+                <h4><span>👑</span> Welcome Guest Portal</h4>
+                <p>Download our exclusive Heights Brochure detailing rules, layout lists, and structural features.</p>
+                <button id="btn-download-brochure" class="btn btn-outline btn-full-width text-white">
+                  📥 Download Heights Brochure
+                </button>
+              </div>
+
+              <div class="contact-card-info">
+                <div class="info-card-item">
+                  <span class="icon">📞</span>
+                  <div>
+                    <h4>Concierge Line</h4>
+                    <p>+1 (555) 902-8800</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+            
+            <div class="booking-form-panel">
+              <form id="tour-form" class="appointment-form" novalidate>
+                <div class="form-row">
+                  <div class="form-group">
+                    <label for="tour-name">Full Name</label>
+                    <input type="text" id="tour-name" required placeholder="Alexander Vance" />
+                    <span class="error-msg">Please enter your name</span>
+                  </div>
+                  <div class="form-group">
+                    <label for="tour-email">Email Address</label>
+                    <input type="email" id="tour-email" required placeholder="alex@vance.com" />
+                    <span class="error-msg">Please enter a valid email address</span>
+                  </div>
+                </div>
+                
+                <div class="form-row">
+                  <div class="form-group">
+                    <label for="tour-phone">Phone Number</label>
+                    <input type="tel" id="tour-phone" required placeholder="+1 (555) 987-6543" />
+                    <span class="error-msg">Please enter a valid phone number</span>
+                  </div>
+                  <div class="form-group">
+                    <label for="tour-suite">Preferred Residence</label>
+                    <select id="tour-suite" required>
+                      <option value="" disabled selected>Select a Layout</option>
+                      <option value="studio">Grand Studio Executive</option>
+                      <option value="duplex">Imperial Duplex Suite</option>
+                      <option value="penthouse">Royal Sky Penthouse</option>
+                    </select>
+                    <span class="error-msg">Please select a residence type</span>
+                  </div>
+                </div>
+                
+                <div class="form-row">
+                  <div class="form-group">
+                    <label for="tour-date">Preferred Date</label>
+                    <input type="date" id="tour-date" required />
+                    <span class="error-msg">Please select a valid date in the future</span>
+                  </div>
+                  <div class="form-group">
+                    <label for="tour-time">Time Slot</label>
+                    <select id="tour-time" required>
+                      <option value="" disabled selected>Select Time Slot</option>
+                      <option value="morning">Morning (10:00 AM - 12:00 PM)</option>
+                      <option value="afternoon">Afternoon (1:00 PM - 3:00 PM)</option>
+                      <option value="evening">Sunset Session (4:00 PM - 6:00 PM)</option>
+                    </select>
+                    <span class="error-msg">Please choose a time slot</span>
+                  </div>
+                </div>
+                
+                <button type="submit" class="btn btn-gold btn-full-width">Submit Tour Request</button>
+              </form>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Booking Success Modal with iCalendar Downloader -->
+      <div id="tour-success-modal" class="modal-overlay">
+        <div class="modal-box glassmorphic">
+          <div class="modal-success-icon">✓</div>
+          <h3>Tour Scheduled!</h3>
+          <p>Thank you for registering. Our concierge host will contact you shortly to validate security details.</p>
+          <div class="modal-details">
+            <p><strong>Guest:</strong> <span id="modal-guest-name">John Doe</span></p>
+            <p><strong>Residence:</strong> <span id="modal-suite-name">Penthouse Suite</span></p>
+            <p><strong>Schedule:</strong> <span id="modal-schedule-time">Monday, 4:00 PM</span></p>
+          </div>
+          <div class="modal-actions-container">
+            <button id="btn-add-tour-calendar" class="btn btn-gold btn-full-width">📅 Add to Calendar (.ics)</button>
+            <button id="close-tour-modal" class="btn btn-outline btn-full-width">Close</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Contact Map Section -->
+      <section id="contact" class="contact-section section-padding">
+        <div class="container">
+          <div class="contact-grid">
+            <div class="contact-details-panel">
+              <div class="section-subtitle">Obsidian Club</div>
+              <h2 class="section-title">The Skyline Gateway</h2>
+              <p class="contact-para">Located high above downtown, Aura Heights offers transit proximity and private valet arrivals via our private service loop road.</p>
+              
+              <div class="contact-info-list">
+                <div class="contact-info-item">
+                  <span class="icon">📍</span>
+                  <div>
+                    <strong>Entrance Address</strong>
+                    <p>808 Obsidian Avenue, Suite 45, Metropolis</p>
+                  </div>
+                </div>
+                <div class="contact-info-item">
+                  <span class="icon">🕒</span>
+                  <div>
+                    <strong>Concierge Availability</strong>
+                    <p>24 Hours / 7 Days a week</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+            
+            <div class="contact-map-wrapper">
+              <div class="map-card-box glassmorphic">
+                <!-- Custom Stylized Dark Luxury locator map -->
+                <div class="mock-map-container" id="lounge-map">
+                  <div class="map-grid-overlay"></div>
+                  <div class="map-road road-horizontal" style="top: 40%"></div>
+                  <div class="map-road road-vertical" style="left: 60%"></div>
+                  <div class="map-landmark park-area" style="top: 10%; left: 10%; width: 35%; height: 25%;">
+                    <span>Obsidian Park</span>
+                  </div>
+                  
+                  <div class="map-landmark clinic-pin" style="top: 38%; left: 58%;">
+                    <div class="pin-pulse"></div>
+                    <div class="pin-marker" style="background: linear-gradient(135deg, #d4af37, #aa7c11)">👑</div>
+                    <div class="pin-tooltip">
+                      <strong>Aura Heights</strong>
+                      <p>808 Obsidian Avenue</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="lounge-footer">
+      <div class="footer-top container">
+        <div class="footer-info">
+          <a href="#" class="logo-link">
+            <span class="logo-text">AURAHEIGHTS</span>
+          </a>
+          <p class="footer-tagline">Architectural scale meets refined luxury. Penthouse units and private sky lounges.</p>
+        </div>
+        
+        <div class="footer-links-group">
+          <h4>Layouts</h4>
+          <ul class="footer-links">
+            <li><a href="#floors">Grand Studio</a></li>
+            <li><a href="#floors">Imperial Duplex</a></li>
+            <li><a href="#floors">Sky Penthouse</a></li>
+          </ul>
+        </div>
+        
+        <div class="footer-newsletter">
+          <h4>VIP Newsletter</h4>
+          <p>Join the registry list to receive announcements on structural availability.</p>
+          <form class="newsletter-form" id="lounge-news-form">
+            <input type="email" placeholder="vip@email.com" required aria-label="VIP registry email" />
+            <button type="submit" class="btn btn-gold">Join</button>
+          </form>
+        </div>
+      </div>
+      
+      <div class="footer-bottom container">
+        <p>&copy; 2026 Aura Heights. All rights reserved. • Privacy Registry • Luxury Terms</p>
+      </div>
+    </footer>
+
+    <!-- Script Entrypoint -->
+    <script type="module" src="/src/main.js"></script>
+  </body>
+</html>
